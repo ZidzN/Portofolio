@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zaidan Nabil - Backend Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f4f8;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #0f172a;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #38bdf8;
+  margin-bottom: 20px;
+}
+
+nav {
+  background-color: #1e293b;
+  padding: 15px 20px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+nav a {
+  color: #f1f5f9;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 28px;
+  color: #0f172a;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #38bdf8;
+  padding-bottom: 5px;
+}
+
+.project-card {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+footer {
+  background-color: #0f172a;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.contact-info {
+  margin-top: 10px;
+  color: #64748b;
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#projects">Proyek</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </nav>  <header>
+    <img src="assets/zaidan.jpg" alt="Foto Zaidan Nabil" />
+    <h1>Zaidan Nabil</h1>
+    <p>Backend Developer | API Specialist | System Designer</p>
+  </header>  <section id="about">
+    <h2>Tentang Saya</h2>
+    <p>
+      Saya Zaidan, seorang Backend Developer yang fokus pada pengembangan sistem backend
+      yang efisien, aman, dan scalable. Saya memiliki pengalaman membangun RESTful API,
+      mengelola database, serta menerapkan arsitektur microservices dan CI/CD pipeline.
+    </p>
+  </section>  <section id="projects">
+    <h2>Proyek Terbaru</h2>
+    <div class="project-card">
+      <h3>Sistem Autentikasi API</h3>
+      <p>REST API dengan autentikasi JWT, Node.js, dan MongoDB.</p>
+      <a href="https://github.com/zaidannabil/api-auth-system" target="_blank">Lihat di GitHub</a>
+    </div>
+    <div class="project-card">
+      <h3>Microservice Pembayaran</h3>
+      <p>Arsitektur berbasis microservice untuk manajemen transaksi menggunakan Redis dan Docker.</p>
+      <a href="https://github.com/zaidannabil/payment-microservice" target="_blank">Lihat di GitHub</a>
+    </div>
+  </section>  <section id="contact">
+    <h2>Kontak</h2>
+    <p>Email: <a href="mailto:zaidan@example.com">zaidan@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/zaidannabil" target="_blank">github.com/zaidannabil</a></p>
+    <p class="contact-info">Terima kasih sudah mengunjungi portofolio saya!</p>
+  </section>  <footer>
+    <p>&copy; 2025 Zaidan Nabil. All rights reserved.</p>
+  </footer>
+</body>
+</html>
