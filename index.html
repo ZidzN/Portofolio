@@ -3,36 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zaidan.dev | Portfolio</title>
+  <title>Zaidan.dev | Elite Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Animations -->
+  <style>
+    @keyframes fadeUp { from { opacity:0; transform: translateY(40px);} to {opacity:1; transform:none;} }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+    .animate-fadeUp{animation:fadeUp 1s ease-out both}
+    .animate-float{animation:float 5s ease-in-out infinite}
+    .delay-1{animation-delay:.15s}
+    .delay-2{animation-delay:.3s}
+    .delay-3{animation-delay:.45s}
+  </style>
+
+  <!-- Mobile Navbar -->
   <script defer>
     document.addEventListener('DOMContentLoaded', () => {
       const btn = document.getElementById('menuBtn');
       const menu = document.getElementById('mobileMenu');
-      btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+      btn.onclick = () => menu.classList.toggle('hidden');
     });
   </script>
 </head>
 <body class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white">
 
-<!-- NAVBAR (DESKTOP + ANDROID SAFE) -->
+<!-- NAVBAR -->
 <nav class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur border-b border-white/10">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
     <span class="font-bold">Zaidan.dev</span>
-
-    <!-- Desktop Menu -->
     <div class="hidden md:flex gap-6 text-sm">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </div>
-
-    <!-- Mobile Button -->
     <button id="menuBtn" class="md:hidden text-2xl">☰</button>
   </div>
-
-  <!-- Mobile Menu -->
   <div id="mobileMenu" class="hidden md:hidden bg-black px-6 py-4 space-y-3">
     <a href="index.html" class="block">Home</a>
     <a href="about.html" class="block">About</a>
@@ -46,32 +53,104 @@
 <!-- HERO -->
 <section class="min-h-screen flex items-center justify-center px-6">
   <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl">
-    <div>
+    <div class="animate-fadeUp">
       <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Halo, saya <span class="text-indigo-400">Zaidan</span></h1>
-      <p class="text-gray-400 mb-6">Web developer pelajar yang fokus pada UI modern, performa, dan desain profesional.</p>
+      <p class="text-gray-400 mb-6">Web developer pelajar yang membangun website modern, cepat, dan profesional untuk personal branding & UMKM.</p>
       <ul class="text-gray-300 space-y-2 mb-8">
-        <li>✔ Website UMKM</li>
-        <li>✔ Landing Page</li>
-        <li>✔ Portfolio Personal</li>
+        <li>✔ Desain modern & clean</li>
+        <li>✔ Responsive semua device</li>
+        <li>✔ Siap untuk GitHub Pages</li>
       </ul>
-      <a href="projects.html" class="bg-indigo-600 px-8 py-4 rounded-xl">Lihat Project</a>
+      <div class="flex flex-wrap gap-4">
+        <a href="projects.html" class="bg-indigo-600 hover:bg-indigo-500 transition px-8 py-4 rounded-xl">Lihat Project</a>
+        <a href="#pricing" class="border border-white/30 px-8 py-4 rounded-xl">Paket Jasa</a>
+      </div>
     </div>
-    <div class="flex justify-center">
-      <img src="assets/img/profile.jpg" class="w-72 h-72 rounded-full border-4 border-indigo-400/40" />
+    <div class="flex justify-center animate-float">
+      <img src="assets/img/profile.jpg" class="w-72 h-72 rounded-full border-4 border-indigo-400/40 shadow-2xl" />
     </div>
   </div>
 </section>
 
-<!-- SERVICES (DISATUKAN DI HOME) -->
-<section class="bg-black/30 py-24">
+<!-- STATS -->
+<section class="bg-black/30 py-20">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+    <div class="animate-fadeUp">
+      <h3 class="text-4xl font-bold text-indigo-400">10+</h3>
+      <p class="text-gray-400">Website Dibangun</p>
+    </div>
+    <div class="animate-fadeUp delay-1">
+      <h3 class="text-4xl font-bold text-indigo-400">100%</h3>
+      <p class="text-gray-400">Mobile Friendly</p>
+    </div>
+    <div class="animate-fadeUp delay-2">
+      <h3 class="text-4xl font-bold text-indigo-400">Fast</h3>
+      <p class="text-gray-400">Load Time</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="py-24">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-4xl font-bold mb-12">Layanan</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white/5 p-6 rounded-xl">Website UMKM Profesional</div>
-      <div class="bg-white/5 p-6 rounded-xl">Landing Page Produk</div>
-      <div class="bg-white/5 p-6 rounded-xl">Portfolio Personal</div>
+      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp">Website UMKM Profesional</div>
+      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp delay-1">Landing Page Produk</div>
+      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp delay-2">Portfolio Personal</div>
     </div>
   </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="bg-black/30 py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-12">Paket Jasa</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp">
+        <h3 class="text-xl font-bold mb-4">Basic</h3>
+        <ul class="text-gray-400 space-y-2">
+          <li>✔ 1 halaman</li>
+          <li>✔ Responsive</li>
+          <li>✔ Gratis hosting GitHub</li>
+        </ul>
+      </div>
+      <div class="bg-indigo-600 p-6 rounded-xl animate-fadeUp delay-1">
+        <h3 class="text-xl font-bold mb-4">Standard</h3>
+        <ul class="space-y-2">
+          <li>✔ 3–5 halaman</li>
+          <li>✔ Animasi ringan</li>
+          <li>✔ SEO basic</li>
+        </ul>
+      </div>
+      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp delay-2">
+        <h3 class="text-xl font-bold mb-4">Premium</h3>
+        <ul class="text-gray-400 space-y-2">
+          <li>✔ Custom desain</li>
+          <li>✔ Prioritas revisi</li>
+          <li>✔ Siap production</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-12">Testimoni</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp">“Website rapi dan cepat, cocok untuk bisnis.”</div>
+      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp delay-1">“Desain modern dan mobile friendly.”</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-indigo-700 py-24 text-center">
+  <h2 class="text-4xl font-bold mb-6">Siap Memulai?</h2>
+  <p class="mb-8">Hubungi saya untuk diskusi project website Anda</p>
+  <a href="contact.html" class="bg-white text-indigo-700 px-8 py-4 rounded-xl font-semibold">Hubungi Saya</a>
 </section>
 
 <footer class="py-6 text-center text-sm text-gray-400">© 2025 Zaidan.dev</footer>
