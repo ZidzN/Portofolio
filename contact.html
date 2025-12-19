@@ -1,20 +1,80 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Zaidan.dev</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zaidan.dev | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="assets/js/i18n.js"></script>
+  <script defer>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('menuBtn');
+      const menu = document.getElementById('mobileMenu');
+      btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    });
+  </script>
 </head>
-<body class="bg-indigo-700 text-white text-center px-6">
+<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white">
 
-<h1 class="text-4xl font-bold my-12" data-i18n="contactTitle">Kontak</h1>
+<!-- NAVBAR (DESKTOP + ANDROID SAFE) -->
+<nav class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <span class="font-bold">Zaidan.dev</span>
 
-<div class="flex justify-center gap-6">
-  <a href="https://wa.me/62XXXXXXXXXX" class="bg-white text-indigo-700 px-6 py-3 rounded-xl">WhatsApp</a>
-  <a href="#" class="bg-white/20 px-6 py-3 rounded-xl">Instagram</a>
-</div>
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex gap-6 text-sm">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Mobile Button -->
+    <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-black px-6 py-4 space-y-3">
+    <a href="index.html" class="block">Home</a>
+    <a href="about.html" class="block">About</a>
+    <a href="projects.html" class="block">Projects</a>
+    <a href="contact.html" class="block">Contact</a>
+  </div>
+</nav>
+
+<div class="pt-24"></div>
+
+<!-- HERO -->
+<section class="min-h-screen flex items-center justify-center px-6">
+  <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl">
+    <div>
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Halo, saya <span class="text-indigo-400">Zaidan</span></h1>
+      <p class="text-gray-400 mb-6">Web developer pelajar yang fokus pada UI modern, performa, dan desain profesional.</p>
+      <ul class="text-gray-300 space-y-2 mb-8">
+        <li>✔ Website UMKM</li>
+        <li>✔ Landing Page</li>
+        <li>✔ Portfolio Personal</li>
+      </ul>
+      <a href="projects.html" class="bg-indigo-600 px-8 py-4 rounded-xl">Lihat Project</a>
+    </div>
+    <div class="flex justify-center">
+      <img src="assets/img/profile.jpg" class="w-72 h-72 rounded-full border-4 border-indigo-400/40" />
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES (DISATUKAN DI HOME) -->
+<section class="bg-black/30 py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-12">Layanan</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white/5 p-6 rounded-xl">Website UMKM Profesional</div>
+      <div class="bg-white/5 p-6 rounded-xl">Landing Page Produk</div>
+      <div class="bg-white/5 p-6 rounded-xl">Portfolio Personal</div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-6 text-center text-sm text-gray-400">© 2025 Zaidan.dev</footer>
 
 </body>
 </html>
