@@ -2,7 +2,7 @@
 
 > A modern and responsive personal portfolio website showcasing my profile, skills, experience, journey, and projects.
 
-🌐 **Live Website:** [portofolio-sandy-one-57.vercel.app](https://portofolio-sandy-one-57.vercel.app)
+🌐 **Live Website:** [https://zidzn.github.io/Portofolio](https://zidzn.github.io/Portofolio/))
 
 ---
 
