@@ -1,48 +1,250 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | Zaidan.dev</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script defer>
-document.addEventListener('DOMContentLoaded',()=>{
-  const btn=document.getElementById('menuBtn');
-  const menu=document.getElementById('mobileMenu');
-  btn.onclick=()=>menu.classList.toggle('hidden');
-});
-</script>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Contact | Zaidan Nabil</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/style.css"
+    >
+
 </head>
 
-<body class="bg-indigo-700 text-white">
+<body>
 
-<nav class="fixed top-0 w-full z-50 bg-black/50 backdrop-blur">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <span class="font-bold">Zaidan.dev</span>
-    <div class="hidden md:flex gap-6 text-sm">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html" class="underline">Contact</a>
+
+<header class="navbar scrolled">
+
+    <div class="container nav-wrapper">
+
+        <a href="index.html" class="brand">
+
+            <span class="brand-mark">
+                Z
+            </span>
+
+            <span>
+                Zaidan.
+            </span>
+
+        </a>
+
+
+        <nav class="nav-menu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="index.html#skills">
+                Skills
+            </a>
+
+            <a href="index.html#experience">
+                Experience
+            </a>
+
+            <a href="projects.html">
+                Projects
+            </a>
+
+            <a href="contact.html" class="active">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <a
+            href="contact.html"
+            class="nav-cta"
+        >
+            Let's Connect
+        </a>
+
     </div>
-    <button id="menuBtn" class="md:hidden text-2xl">☰</button>
-  </div>
-  <div id="mobileMenu" class="hidden md:hidden bg-black px-6 py-4 space-y-3">
-    <a href="index.html" class="block">Home</a>
-    <a href="about.html" class="block">About</a>
-    <a href="projects.html" class="block">Projects</a>
-    <a href="contact.html" class="block">Contact</a>
-  </div>
-</nav>
 
-<div class="pt-32 text-center px-6">
-  <h1 class="text-4xl font-bold mb-6">Hubungi Saya</h1>
-  <p class="mb-8">Tersedia untuk project kecil & freelance</p>
-  <div class="flex flex-col sm:flex-row justify-center gap-4">
-    <a href="https://wa.me/62XXXXXXXXXX" class="bg-white text-indigo-700 px-6 py-3 rounded-xl">WhatsApp</a>
-    <a href="#" class="bg-white/20 px-6 py-3 rounded-xl">Instagram</a>
-  </div>
-</div>
+</header>
+
+
+<main>
+
+
+<section class="page-hero">
+
+    <div class="container">
+
+        <span class="section-label">
+            CONTACT
+        </span>
+
+        <h1>
+            Let's
+            <span>connect.</span>
+        </h1>
+
+        <p>
+            Terbuka untuk berdiskusi,
+            berkolaborasi, dan mendapatkan
+            pengalaman baru.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="contact-card">
+
+            <div class="contact-main">
+
+                <span class="section-label">
+                    GET IN TOUCH
+                </span>
+
+                <h2>
+                    Have something
+                    <span>in mind?</span>
+                </h2>
+
+                <p>
+                    Jangan ragu untuk menghubungi saya
+                    jika ingin berdiskusi mengenai project,
+                    organisasi, kolaborasi, atau sekadar
+                    bertukar ide.
+                </p>
+
+            </div>
+
+
+            <div class="contact-links">
+
+                <a
+                    href="https://github.com/ZidzN"
+                    target="_blank"
+                    rel="noopener"
+                >
+
+                    <span>
+                        GitHub
+                    </span>
+
+                    <strong>
+                        ↗
+                    </strong>
+
+                </a>
+
+
+                <a href="#">
+
+                    <span>
+                        Instagram
+                    </span>
+
+                    <strong>
+                        ↗
+                    </strong>
+
+                </a>
+
+
+                <a href="#">
+
+                    <span>
+                        LinkedIn
+                    </span>
+
+                    <strong>
+                        ↗
+                    </strong>
+
+                </a>
+
+
+                <a href="mailto:your@email.com">
+
+                    <span>
+                        Email
+                    </span>
+
+                    <strong>
+                        ↗
+                    </strong>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-wrapper">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="brand">
+
+                <span class="brand-mark">
+                    Z
+                </span>
+
+                <span>
+                    Zaidan.
+                </span>
+
+            </a>
+
+            <p>
+                Learn. Contribute. Grow.
+            </p>
+
+        </div>
+
+
+        <div class="footer-right">
+
+            © 2026 Zaidan Nabil
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
