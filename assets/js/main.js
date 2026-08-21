@@ -1,70 +1,100 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const navbar = document.getElementById("navbar");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const navMenu = document.getElementById("navMenu");
+    const navbar =
+        document.querySelector(".navbar");
 
-    /* ================= NAVBAR ================= */
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const navMenu =
+        document.querySelector(".nav-menu");
+
+
+    /* NAVBAR */
 
     function updateNavbar() {
 
         if (!navbar) return;
 
-        if (window.scrollY > 40) {
+        if (window.scrollY > 30) {
+
             navbar.classList.add("scrolled");
+
         } else {
+
             navbar.classList.remove("scrolled");
+
         }
 
     }
 
-    window.addEventListener("scroll", updateNavbar);
+    window.addEventListener(
+        "scroll",
+        updateNavbar
+    );
 
     updateNavbar();
 
 
-    /* ================= MOBILE MENU ================= */
+    /* MOBILE MENU */
 
     if (mobileMenu && navMenu) {
 
-        mobileMenu.addEventListener("click", () => {
+        mobileMenu.addEventListener(
+            "click",
+            () => {
 
-            navMenu.classList.toggle("open");
+                navMenu.classList.toggle(
+                    "open"
+                );
 
-        });
+            }
+        );
 
 
-        navMenu.querySelectorAll("a").forEach(link => {
+        navMenu
+            .querySelectorAll("a")
+            .forEach(link => {
 
-            link.addEventListener("click", () => {
+                link.addEventListener(
+                    "click",
+                    () => {
 
-                navMenu.classList.remove("open");
+                        navMenu.classList.remove(
+                            "open"
+                        );
+
+                    }
+                );
 
             });
-
-        });
 
     }
 
 
-    /* ================= REVEAL ANIMATION ================= */
+    /* REVEAL */
 
-    const revealElements =
-        document.querySelectorAll(".reveal");
+    const reveal =
+        document.querySelectorAll(
+            ".reveal"
+        );
 
 
-    const revealObserver =
+    const observer =
         new IntersectionObserver(
-
             entries => {
 
                 entries.forEach(entry => {
 
-                    if (entry.isIntersecting) {
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                        entry.target.classList.add("visible");
+                        entry.target.classList.add(
+                            "visible"
+                        );
 
-                        revealObserver.unobserve(
+                        observer.unobserve(
                             entry.target
                         );
 
@@ -73,74 +103,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
             },
-
             {
-                threshold: 0.12
+                threshold: .12
             }
-
         );
 
 
-    revealElements.forEach(element => {
+    reveal.forEach(element => {
 
-        revealObserver.observe(element);
+        observer.observe(element);
 
     });
-
-
-    /* ================= ACTIVE NAV ================= */
-
-    const sections =
-        document.querySelectorAll("section[id]");
-
-    const navLinks =
-        document.querySelectorAll(
-            ".nav-menu a[href^='#']"
-        );
-
-
-    function updateActiveNav() {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const sectionTop =
-                section.offsetTop - 150;
-
-            if (window.scrollY >= sectionTop) {
-
-                current =
-                    section.getAttribute("id");
-
-            }
-
-        });
-
-
-        navLinks.forEach(link => {
-
-            link.classList.remove("active");
-
-            if (
-                link.getAttribute("href") ===
-                `#${current}`
-            ) {
-
-                link.classList.add("active");
-
-            }
-
-        });
-
-    }
-
-
-    window.addEventListener(
-        "scroll",
-        updateActiveNav
-    );
-
-    updateActiveNav();
 
 });
