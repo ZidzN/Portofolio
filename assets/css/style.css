@@ -2038,3 +2038,375 @@ footer {
         scroll-behavior: auto !important;
     }
 }
+
+/* =========================================================
+   HOME — JOURNEY PREVIEW
+   ========================================================= */
+
+.home-journey {
+    overflow: hidden;
+}
+
+
+/* HEADER */
+
+.home-journey-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 65px;
+}
+
+.home-journey-header h2 {
+    margin: 0;
+
+    font-family: var(--heading);
+
+    font-size:
+        clamp(3rem, 6vw, 5rem);
+
+    line-height: .95;
+
+    letter-spacing: -.065em;
+}
+
+.home-journey-header h2 span {
+    color: var(--primary-light);
+}
+
+
+/* LINK */
+
+.journey-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid
+        rgba(129, 140, 248, .3);
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    transition: .3s ease;
+}
+
+.journey-link span {
+    color: var(--primary-light);
+
+    font-size: 15px;
+
+    transition: transform .3s ease;
+}
+
+.journey-link:hover {
+    color: var(--primary-light);
+
+    border-color:
+        var(--primary-light);
+}
+
+.journey-link:hover span {
+    transform:
+        translate(3px, -3px);
+}
+
+
+/* TIMELINE */
+
+.home-journey-timeline {
+    position: relative;
+
+    max-width: 950px;
+}
+
+
+/* LINE */
+
+.home-journey-timeline::before {
+    content: "";
+
+    position: absolute;
+
+    top: 25px;
+    bottom: 25px;
+
+    left: 27px;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(129, 140, 248, .35) 10%,
+            rgba(129, 140, 248, .35) 90%,
+            transparent
+        );
+}
+
+
+/* ITEM */
+
+.home-journey-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        55px 1fr;
+
+    gap: 30px;
+
+    padding-bottom: 35px;
+}
+
+.home-journey-item:last-child {
+    padding-bottom: 0;
+}
+
+
+/* MARKER */
+
+.home-journey-marker {
+    position: relative;
+
+    z-index: 2;
+}
+
+.home-journey-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid
+        rgba(129, 140, 248, .28);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111629,
+            #0b0f1a
+        );
+
+    color: var(--primary-light);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, .25);
+
+    transition: .35s ease;
+}
+
+.home-journey-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+.home-journey-item:hover
+.home-journey-icon {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(129, 140, 248, .7);
+
+    box-shadow:
+        0 0 30px
+        rgba(99, 102, 241, .18);
+}
+
+
+/* CONTENT */
+
+.home-journey-content {
+    padding: 4px 0 20px;
+
+    border-bottom: 1px solid var(--border);
+
+    transition: .3s ease;
+}
+
+.home-journey-item:last-child
+.home-journey-content {
+    border-bottom: 0;
+}
+
+
+.home-journey-stage {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--primary-light);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: .18em;
+}
+
+.home-journey-content h3 {
+    margin: 0 0 6px;
+
+    color: var(--white);
+
+    font-family: var(--heading);
+
+    font-size: 25px;
+
+    letter-spacing: -.035em;
+}
+
+.home-journey-content p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* CURRENT */
+
+.home-journey-current {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.home-current-badge {
+    padding: 3px 7px;
+
+    border: 1px solid
+        rgba(74, 222, 128, .25);
+
+    border-radius: 5px;
+
+    color: #86efac;
+
+    background:
+        rgba(74, 222, 128, .04);
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    letter-spacing: .12em;
+}
+
+
+/* CURRENT ICON */
+
+.home-journey-item.current
+.home-journey-icon {
+    border-color:
+        rgba(129, 140, 248, .7);
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    box-shadow:
+        0 0 35px
+        rgba(99, 102, 241, .25);
+}
+
+
+/* HOVER */
+
+.home-journey-item:hover
+.home-journey-content {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .home-journey-header {
+        display: block;
+
+        margin-bottom: 45px;
+    }
+
+    .home-journey-header h2 {
+        font-size:
+            clamp(3rem, 14vw, 4.5rem);
+    }
+
+    .journey-link {
+        margin-top: 22px;
+    }
+
+    .home-journey-timeline::before {
+        left: 21px;
+    }
+
+    .home-journey-item {
+        grid-template-columns:
+            43px 1fr;
+
+        gap: 18px;
+
+        padding-bottom: 25px;
+    }
+
+    .home-journey-icon {
+        width: 43px;
+        height: 43px;
+
+        border-radius: 12px;
+    }
+
+    .home-journey-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .home-journey-content {
+        padding-top: 2px;
+    }
+
+    .home-journey-content h3 {
+        font-size: 21px;
+    }
+
+    .home-journey-content p {
+        font-size: 11px;
+
+        line-height: 1.7;
+    }
+
+    .home-journey-item:hover
+    .home-journey-content {
+        transform: none;
+    }
+}
