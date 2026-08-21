@@ -1,190 +1,1230 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zaidan.dev | Elite Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Animations -->
-  <style>
-    @keyframes fadeUp { from { opacity:0; transform: translateY(40px);} to {opacity:1; transform:none;} }
-    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-    .animate-fadeUp{animation:fadeUp 1s ease-out both}
-    .animate-float{animation:float 5s ease-in-out infinite}
-    .delay-1{animation-delay:.15s}
-    .delay-2{animation-delay:.3s}
-    .delay-3{animation-delay:.45s}
-  </style>
+    <title>Zaidan Nabil | Student Portfolio</title>
 
-  <!-- Mobile Navbar -->
-  <script defer>
-    document.addEventListener('DOMContentLoaded', () => {
-      const btn = document.getElementById('menuBtn');
-      const menu = document.getElementById('mobileMenu');
-      btn.onclick = () => menu.classList.toggle('hidden');
-    });
-  </script>
+    <meta
+        name="description"
+        content="Portfolio personal Zaidan Nabil — mahasiswa yang tertarik pada organisasi, teknologi, desain, fotografi, dan pengembangan diri."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white">
 
-<!-- NAVBAR -->
-<nav class="fixed top-0 w-full z-50 bg-black/70 backdrop-blur border-b border-white/10">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <span class="font-bold">Zidz</span>
-    <div class="hidden md:flex gap-6 text-sm">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <button id="menuBtn" class="md:hidden text-2xl">☰</button>
-  </div>
-  <div id="mobileMenu" class="hidden md:hidden bg-black px-6 py-4 space-y-3">
-    <a href="index.html" class="block">Home</a>
-    <a href="about.html" class="block">About</a>
-    <a href="projects.html" class="block">Projects</a>
-    <a href="contact.html" class="block">Contact</a>
-  </div>
-</nav>
+<body>
 
-<div class="pt-24"></div>
+<!-- ================= NAVBAR ================= -->
 
-<!-- HERO -->
-<section class="min-h-screen flex items-center justify-center px-6">
-  <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl">
-    <div class="animate-fadeUp">
-      <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Halo, saya <span class="text-indigo-400">Zaidan</span></h1>
-      <p class="text-gray-400 mb-6">Testing Profile Paragraph 1</p>
-      <ul class="text-gray-300 space-y-2 mb-8">
-        <li>✔ Testing Chat 1</li>
-        <li>✔ Testing Chat 2</li>
-        <li>✔ Testing Chat 3</li>
-      </ul>
-      <div class="flex flex-wrap gap-4">
-        <a href="projects.html" class="bg-indigo-600 hover:bg-indigo-500 transition px-8 py-4 rounded-xl">Lihat Project</a>
-        <a href="#pricing" class="border border-white/30 px-8 py-4 rounded-xl">More Profile</a>
-      </div>
-    </div>
-    <div class="flex justify-center animate-float">
-      <img src="assets/img/profile.jpg" class="w-72 h-72 rounded-full border-4 border-indigo-400/40 shadow-2xl" />
-    </div>
-  </div>
-</section>
+<header class="navbar" id="navbar">
 
-<!-- STATS -->
-<section class="bg-black/30 py-20">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-    <div class="animate-fadeUp">
-      <h3 class="text-4xl font-bold text-indigo-400">10+</h3>
-      <p class="text-gray-400">Website Dibangun</p>
-    </div>
-    <div class="animate-fadeUp delay-1">
-      <h3 class="text-4xl font-bold text-indigo-400">100%</h3>
-      <p class="text-gray-400">Mobile Friendly</p>
-    </div>
-    <div class="animate-fadeUp delay-2">
-      <h3 class="text-4xl font-bold text-indigo-400">Fast</h3>
-      <p class="text-gray-400">Load Time</p>
-    </div>
-  </div>
-</section>
+    <div class="container nav-wrapper">
 
-<!-- SERVICES -->
-<section class="py-24">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl font-bold mb-12">Layanan</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp">Website UMKM Profesional</div>
-      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp delay-1">Landing Page Produk</div>
-      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp delay-2">Portfolio Personal</div>
+        <a href="index.html" class="brand">
+            <span class="brand-mark">Z</span>
+            <span>Zaidan.</span>
+        </a>
+
+        <nav class="nav-menu" id="navMenu">
+
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+        <a href="#contact" class="nav-cta">
+            Let's Connect
+        </a>
+
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open navigation"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
     </div>
-  </div>
-</section>
 
-<!-- PRICING -->
-<section id="pricing" class="bg-black/30 py-24">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl font-bold mb-12">Paket Jasa</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp">
-        <h3 class="text-xl font-bold mb-4">Basic</h3>
-        <ul class="text-gray-400 space-y-2">
-          <li>✔ 1 halaman</li>
-          <li>✔ Responsive</li>
-          <li>✔ Gratis hosting GitHub</li>
-        </ul>
-      </div>
-      <div class="bg-indigo-600 p-6 rounded-xl animate-fadeUp delay-1">
-        <h3 class="text-xl font-bold mb-4">Standard</h3>
-        <ul class="space-y-2">
-          <li>✔ 3–5 halaman</li>
-          <li>✔ Animasi ringan</li>
-          <li>✔ SEO basic</li>
-        </ul>
-      </div>
-      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp delay-2">
-        <h3 class="text-xl font-bold mb-4">Premium</h3>
-        <ul class="text-gray-400 space-y-2">
-          <li>✔ Custom desain</li>
-          <li>✔ Prioritas revisi</li>
-          <li>✔ Siap production</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+</header>
 
-<!-- TESTIMONIAL -->
-<section class="py-24 bg-black/20">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl font-bold mb-4">Testimoni Klien</h2>
-    <p class="text-gray-400 mb-12">Testimoni ini dilengkapi bukti pendukung berupa identitas klien & hasil website.</p>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Testimoni 1 -->
-      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp">
-        <div class="flex items-center gap-4 mb-4">
-          <img src="https://placehold.co/60x60" class="rounded-full" alt="Client UMKM" />
-          <div>
-            <p class="font-semibold">Andi Pratama</p>
-            <p class="text-sm text-gray-400">Owner UMKM Kuliner</p>
-          </div>
+<main>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-decoration decoration-one"></div>
+    <div class="hero-decoration decoration-two"></div>
+
+    <div class="container hero-wrapper">
+
+        <div class="hero-content reveal">
+
+            <div class="hero-label">
+                <span class="online-dot"></span>
+                OPEN TO NEW EXPERIENCES
+            </div>
+
+            <p class="hero-small-title">
+                STUDENT • CREATIVE • TEAM PLAYER
+            </p>
+
+            <h1>
+                Growing through
+                <span>experience.</span>
+            </h1>
+
+            <p class="hero-description">
+
+                Halo, saya <strong>Zaidan Nabil</strong>.
+                Saya adalah mahasiswa yang memiliki ketertarikan
+                pada organisasi, teknologi, desain digital,
+                fotografi, dan berbagai kegiatan kreatif.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#about" class="button primary">
+                    Explore My Portfolio
+                    <span>↗</span>
+                </a>
+
+                <a href="#contact" class="button secondary">
+                    Let's Connect
+                </a>
+
+            </div>
+
+            <div class="social-links">
+
+                <a
+                    href="https://github.com/ZidzN"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    GitHub
+                </a>
+
+                <span>•</span>
+
+                <a href="#" target="_blank">
+                    Instagram
+                </a>
+
+                <span>•</span>
+
+                <a href="#" target="_blank">
+                    LinkedIn
+                </a>
+
+            </div>
+
         </div>
-        <p class="text-gray-300 mb-4">“Website yang dibuat sangat rapi, cepat dibuka di HP, dan langsung bisa saya gunakan untuk promosi bisnis.”</p>
-        <a href="#" class="text-indigo-400 text-sm underline">Lihat website klien</a>
-      </div>
 
-      <!-- Testimoni 2 -->
-      <div class="bg-white/5 p-6 rounded-xl animate-fadeUp delay-1">
-        <div class="flex items-center gap-4 mb-4">
-          <img src="https://placehold.co/60x60" class="rounded-full" alt="Client Personal Branding" />
-          <div>
-            <p class="font-semibold">Siti Rahma</p>
-            <p class="text-sm text-gray-400">Personal Brand</p>
-          </div>
+
+        <div class="hero-profile reveal">
+
+            <div class="profile-background"></div>
+
+            <div class="profile-frame">
+
+                <img
+                    src="assets/img/profile.jpg"
+                    alt="Foto Zaidan Nabil"
+                >
+
+            </div>
+
+            <div class="profile-tag tag-one">
+
+                <span>01</span>
+
+                <strong>
+                    Creative
+                </strong>
+
+            </div>
+
+            <div class="profile-tag tag-two">
+
+                <span>02</span>
+
+                <strong>
+                    Curious
+                </strong>
+
+            </div>
+
+            <div class="profile-tag tag-three">
+
+                <span>03</span>
+
+                <strong>
+                    Collaborative
+                </strong>
+
+            </div>
+
         </div>
-        <p class="text-gray-300 mb-4">“Desainnya modern dan profesional. Saya pakai untuk portofolio dan terlihat jauh lebih meyakinkan.”</p>
-        <a href="#" class="text-indigo-400 text-sm underline">Lihat hasil portfolio</a>
-      </div>
+
     </div>
 
-    <!-- Bukti tambahan -->
-    <div class="mt-12 text-sm text-gray-400">
-      <p>✔ Identitas klien disamarkan atas izin</p>
-      <p>✔ Screenshot & link website tersedia saat presentasi ke klien</p>
+
+    <div class="scroll-down">
+
+        <span></span>
+
+        Scroll to explore
+
     </div>
-  </div>
+
 </section>
 
-<!-- CTA -->
-<section class="bg-indigo-700 py-24 text-center">
-  <h2 class="text-4xl font-bold mb-6">Siap Memulai?</h2>
-  <p class="mb-8">Hubungi saya untuk diskusi project website Anda</p>
-  <a href="contact.html" class="bg-white text-indigo-700 px-8 py-4 rounded-xl font-semibold">Hubungi Saya</a>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section" id="about">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-label">
+                01 / ABOUT ME
+            </span>
+
+            <h2>
+                Get to know
+                <span>me.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="about-layout">
+
+            <div class="about-text reveal">
+
+                <p class="about-lead">
+
+                    Saya percaya bahwa perkembangan diri
+                    tidak hanya datang dari apa yang kita pelajari,
+                    tetapi juga dari apa yang kita alami.
+
+                </p>
+
+                <p>
+
+                    Saya senang mencoba hal baru, bertemu dengan
+                    orang-orang baru, bekerja dalam tim, dan terlibat
+                    dalam kegiatan yang memberikan pengalaman nyata.
+
+                </p>
+
+                <p>
+
+                    Selain memiliki ketertarikan pada teknologi,
+                    saya juga menikmati dunia fotografi, desain
+                    digital, dan content creation.
+
+                </p>
+
+                <p>
+
+                    Bagi saya, organisasi adalah tempat untuk belajar
+                    bertanggung jawab, berkomunikasi, bekerja sama,
+                    sekaligus memberikan kontribusi kepada lingkungan.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-info reveal">
+
+                <div class="info-item">
+
+                    <span>Currently</span>
+
+                    <strong>
+                        University Student
+                    </strong>
+
+                </div>
+
+                <div class="info-item">
+
+                    <span>Interest</span>
+
+                    <strong>
+                        Organization & Technology
+                    </strong>
+
+                </div>
+
+                <div class="info-item">
+
+                    <span>Creative</span>
+
+                    <strong>
+                        Photography & Design
+                    </strong>
+
+                </div>
+
+                <div class="info-item">
+
+                    <span>Mindset</span>
+
+                    <strong>
+                        Learn • Build • Contribute
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<footer class="py-6 text-center text-sm text-gray-400">© 2025 Zaidan.dev</footer>
+
+<!-- ================= VALUES ================= -->
+
+<section class="section values-section">
+
+    <div class="container">
+
+        <div class="section-header centered reveal">
+
+            <span class="section-label">
+                WHAT I BRING
+            </span>
+
+            <h2>
+                More than
+                <span>skills.</span>
+            </h2>
+
+            <p>
+                Hal yang ingin saya bawa ketika menjadi bagian
+                dari sebuah tim atau organisasi.
+            </p>
+
+        </div>
+
+
+        <div class="values-grid">
+
+            <article class="value-card reveal">
+
+                <span class="value-number">
+                    01
+                </span>
+
+                <div class="value-icon">
+                    ◇
+                </div>
+
+                <h3>
+                    Responsibility
+                </h3>
+
+                <p>
+                    Berusaha menyelesaikan tanggung jawab
+                    dengan baik dan dapat diandalkan oleh tim.
+                </p>
+
+            </article>
+
+
+            <article class="value-card reveal">
+
+                <span class="value-number">
+                    02
+                </span>
+
+                <div class="value-icon">
+                    ↗
+                </div>
+
+                <h3>
+                    Collaboration
+                </h3>
+
+                <p>
+                    Terbuka terhadap ide, mampu bekerja bersama,
+                    dan menghargai kontribusi setiap anggota.
+                </p>
+
+            </article>
+
+
+            <article class="value-card reveal">
+
+                <span class="value-number">
+                    03
+                </span>
+
+                <div class="value-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Creativity
+                </h3>
+
+                <p>
+                    Senang mencari cara baru untuk menyampaikan
+                    ide melalui visual, teknologi, dan media digital.
+                </p>
+
+            </article>
+
+
+            <article class="value-card reveal">
+
+                <span class="value-number">
+                    04
+                </span>
+
+                <div class="value-icon">
+                    +
+                </div>
+
+                <h3>
+                    Growth
+                </h3>
+
+                <p>
+                    Selalu terbuka untuk belajar dan menggunakan
+                    pengalaman sebagai proses pengembangan diri.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section class="section" id="skills">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-label">
+                02 / SKILLS
+            </span>
+
+            <h2>
+                What I can
+                <span>bring.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="skills-layout">
+
+            <div class="skills-intro reveal">
+
+                <p>
+
+                    Saya terus mengembangkan berbagai kemampuan
+                    yang dapat digunakan dalam kegiatan organisasi,
+                    kepanitiaan, maupun project kreatif.
+
+                </p>
+
+            </div>
+
+
+            <div class="skills-list">
+
+                <div class="skill-row reveal">
+
+                    <div class="skill-title">
+
+                        <span>
+                            01
+                        </span>
+
+                        <h3>
+                            Communication
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Menyampaikan ide dan berkomunikasi
+                        dengan anggota tim secara efektif.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-row reveal">
+
+                    <div class="skill-title">
+
+                        <span>
+                            02
+                        </span>
+
+                        <h3>
+                            Teamwork
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Mampu bekerja dalam tim dan menyesuaikan
+                        diri dengan kebutuhan sebuah kelompok.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-row reveal">
+
+                    <div class="skill-title">
+
+                        <span>
+                            03
+                        </span>
+
+                        <h3>
+                            Photography
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Memiliki ketertarikan pada dokumentasi
+                        kegiatan dan storytelling melalui visual.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-row reveal">
+
+                    <div class="skill-title">
+
+                        <span>
+                            04
+                        </span>
+
+                        <h3>
+                            Digital Design
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Membuat visual digital untuk menyampaikan
+                        informasi secara menarik dan mudah dipahami.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-row reveal">
+
+                    <div class="skill-title">
+
+                        <span>
+                            05
+                        </span>
+
+                        <h3>
+                            Technology
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Memiliki pengalaman mengeksplorasi web,
+                        programming, API, dan berbagai tools digital.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-row reveal">
+
+                    <div class="skill-title">
+
+                        <span>
+                            06
+                        </span>
+
+                        <h3>
+                            Problem Solving
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Terbiasa mencari solusi ketika menghadapi
+                        masalah dalam proses pengerjaan project.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section class="section experience-section" id="experience">
+
+    <div class="container">
+
+        <div class="section-header centered reveal">
+
+            <span class="section-label">
+                03 / EXPERIENCE
+            </span>
+
+            <h2>
+                My learning
+                <span>journey.</span>
+            </h2>
+
+            <p>
+                Setiap pengalaman menjadi bagian dari proses
+                saya dalam berkembang.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-date">
+                    2026
+                </div>
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        UNIVERSITY
+                    </span>
+
+                    <h3>
+                        Starting a New Chapter
+                    </h3>
+
+                    <p>
+                        Memulai perjalanan sebagai mahasiswa,
+                        mengenal lingkungan baru, dan mengeksplorasi
+                        berbagai kesempatan untuk berkembang.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-date">
+                    2026
+                </div>
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        ORGANIZATION
+                    </span>
+
+                    <h3>
+                        Exploring Organizational Experience
+                    </h3>
+
+                    <p>
+                        Mencari kesempatan untuk terlibat dalam
+                        UKM dan organisasi kampus sebagai ruang
+                        belajar, berkolaborasi, dan berkontribusi.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-date">
+                    2025
+                </div>
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        PERSONAL DEVELOPMENT
+                    </span>
+
+                    <h3>
+                        Exploring Creative & Technology
+                    </h3>
+
+                    <p>
+                        Mengembangkan ketertarikan pada teknologi,
+                        web development, desain digital, fotografi,
+                        dan berbagai project personal.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-date">
+                    NOW
+                </div>
+
+                <div class="timeline-dot current"></div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        CURRENT FOCUS
+                    </span>
+
+                    <h3>
+                        Learn, Contribute, Grow
+                    </h3>
+
+                    <p>
+                        Fokus mengembangkan kemampuan melalui
+                        pengalaman organisasi, project, dan
+                        kolaborasi dengan orang lain.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section class="section projects-section" id="projects">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <span class="section-label">
+                04 / PROJECTS & CONTRIBUTIONS
+            </span>
+
+            <h2>
+                Things I've
+                <span>worked on.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-image project-one">
+
+                    <span class="project-number">
+                        01
+                    </span>
+
+                    <div class="project-visual">
+
+                        <div class="visual-box">
+                            SKILL
+                        </div>
+
+                        <div class="visual-box">
+                            X
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-body">
+
+                    <div class="project-category">
+                        BUSINESS & TECHNOLOGY
+                    </div>
+
+                    <h3>
+                        SKILLX
+                    </h3>
+
+                    <p>
+                        Konsep platform digital yang mengeksplorasi
+                        bagaimana teknologi dapat membantu seseorang
+                        mengembangkan skill dan menemukan peluang.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>
+                            Technology
+                        </span>
+
+                        <span>
+                            Design
+                        </span>
+
+                        <span>
+                            Business
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 2 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-image project-two">
+
+                    <span class="project-number">
+                        02
+                    </span>
+
+                    <div class="camera-visual">
+                        <div class="camera-lens"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="project-body">
+
+                    <div class="project-category">
+                        CREATIVE
+                    </div>
+
+                    <h3>
+                        Photography & Documentation
+                    </h3>
+
+                    <p>
+                        Eksplorasi fotografi dan dokumentasi sebagai
+                        media untuk menangkap momen serta menyampaikan
+                        cerita melalui visual.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>
+                            Photography
+                        </span>
+
+                        <span>
+                            Documentation
+                        </span>
+
+                        <span>
+                            Visual
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 3 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-image project-three">
+
+                    <span class="project-number">
+                        03
+                    </span>
+
+                    <div class="design-visual">
+
+                        <div></div>
+                        <div></div>
+                        <div></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-body">
+
+                    <div class="project-category">
+                        DIGITAL DESIGN
+                    </div>
+
+                    <h3>
+                        Digital Content & Design
+                    </h3>
+
+                    <p>
+                        Eksplorasi desain digital untuk kebutuhan
+                        visual communication, poster, branding,
+                        dan content creation.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>
+                            Graphic Design
+                        </span>
+
+                        <span>
+                            Content
+                        </span>
+
+                        <span>
+                            Branding
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 4 -->
+
+            <article class="project-card reveal">
+
+                <div class="project-image project-four">
+
+                    <span class="project-number">
+                        04
+                    </span>
+
+                    <div class="web-visual">
+
+                        <div class="web-top"></div>
+
+                        <div class="web-lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-body">
+
+                    <div class="project-category">
+                        TECHNOLOGY
+                    </div>
+
+                    <h3>
+                        Personal Web Projects
+                    </h3>
+
+                    <p>
+                        Berbagai project website dan eksplorasi
+                        teknologi sebagai sarana mengembangkan
+                        kemampuan digital.
+                    </p>
+
+                    <div class="project-tags">
+
+                        <span>
+                            HTML
+                        </span>
+
+                        <span>
+                            CSS
+                        </span>
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY ORGANIZATION ================= -->
+
+<section class="section organization-section">
+
+    <div class="container">
+
+        <div class="organization-card reveal">
+
+            <div class="organization-number">
+                05
+            </div>
+
+            <div class="organization-content">
+
+                <span class="section-label">
+                    WHY ORGANIZATION?
+                </span>
+
+                <h2>
+                    I want to
+                    <span>contribute.</span>
+                </h2>
+
+                <p>
+
+                    Saya ingin bergabung dengan organisasi bukan
+                    hanya untuk mendapatkan pengalaman, tetapi juga
+                    untuk menjadi bagian dari sebuah tim dan
+                    memberikan kontribusi nyata.
+
+                </p>
+
+                <p>
+
+                    Saya ingin bertemu dengan orang-orang baru,
+                    belajar dari pengalaman mereka, mengembangkan
+                    kemampuan yang saya miliki, dan mengambil
+                    peran dalam menciptakan kegiatan yang
+                    bermanfaat.
+
+                </p>
+
+                <p>
+
+                    Saya percaya bahwa organisasi merupakan salah
+                    satu tempat terbaik untuk belajar mengenai
+                    komunikasi, tanggung jawab, kepemimpinan,
+                    kerja sama, dan bagaimana sebuah ide dapat
+                    diwujudkan menjadi sesuatu yang nyata.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="contact-card reveal">
+
+            <div class="contact-main">
+
+                <span class="section-label">
+                    06 / CONTACT
+                </span>
+
+                <h2>
+                    Let's create
+                    <span>something meaningful.</span>
+                </h2>
+
+                <p>
+
+                    Terbuka untuk berdiskusi, berkolaborasi,
+                    dan mendapatkan pengalaman baru.
+
+                </p>
+
+            </div>
+
+
+            <div class="contact-links">
+
+                <a
+                    href="https://github.com/ZidzN"
+                    target="_blank"
+                    rel="noopener"
+                >
+
+                    <span>
+                        GitHub
+                    </span>
+
+                    <strong>
+                        ↗
+                    </strong>
+
+                </a>
+
+
+                <a href="#">
+
+                    <span>
+                        Instagram
+                    </span>
+
+                    <strong>
+                        ↗
+                    </strong>
+
+                </a>
+
+
+                <a href="#">
+
+                    <span>
+                        LinkedIn
+                    </span>
+
+                    <strong>
+                        ↗
+                    </strong>
+
+                </a>
+
+
+                <a href="mailto:your@email.com">
+
+                    <span>
+                        Email
+                    </span>
+
+                    <strong>
+                        ↗
+                    </strong>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container footer-wrapper">
+
+        <div class="footer-brand">
+
+            <a href="#home" class="brand">
+
+                <span class="brand-mark">
+                    Z
+                </span>
+
+                <span>
+                    Zaidan.
+                </span>
+
+            </a>
+
+            <p>
+                Learn. Contribute. Grow.
+            </p>
+
+        </div>
+
+
+        <div class="footer-right">
+
+            <span>
+                © 2026 Zaidan Nabil
+            </span>
+
+            <span>
+                Built with curiosity.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
