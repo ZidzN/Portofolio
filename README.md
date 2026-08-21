@@ -2,7 +2,7 @@
 
 > A modern and responsive personal portfolio website showcasing my profile, skills, experience, journey, and projects.
 
-🌐 **Live Website:** [https://zidzn.github.io/Portofolio](https://zidzn.github.io/Portofolio/))
+🌐 **Live Website:** [https://zidzn.github.io/Portofolio](https://zidzn.github.io/Portofolio/)
 
 ---
 
