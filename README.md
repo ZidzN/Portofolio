@@ -97,12 +97,12 @@ For a better development experience, you can also use a local development server
 
 ## 🌐 Deployment
 
-This portfolio is deployed using **Vercel**.
+This portfolio is deployed using **Github Pages**.
 
-Every update pushed to the repository can be deployed to the live website through the connected Vercel project.
+Every update pushed to the repository can be deployed to the live website through the connected Github Pages project.
 
 **Live:**
-https://portofolio-sandy-one-57.vercel.app
+https://zidzn.github.io/Portofolio/
 
 ---
 
@@ -121,8 +121,6 @@ The website will continue to evolve as I learn and build new projects.
 ---
 
 ## 📸 Preview
-
-> Screenshots of the latest portfolio design can be added here.
 
 ```text
 Coming soon...
@@ -150,7 +148,7 @@ Some improvements planned for future versions:
 Feel free to connect with me through the contact information available on my portfolio website.
 
 🌐 **Portfolio:**
-https://portofolio-sandy-one-57.vercel.app
+https://zidzn.github.io/Portofolio/
 
 💻 **GitHub:**
 https://github.com/ZidzN
