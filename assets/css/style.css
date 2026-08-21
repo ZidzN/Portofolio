@@ -1,30 +1,34 @@
 /* =========================================================
    ZAIDAN NABIL — ORGANIZATION PORTFOLIO
    GLOBAL STYLESHEET
+   Version: Professional Portfolio
    ========================================================= */
 
-/* =========================
-   ROOT
-   ========================= */
+
+/* =========================================================
+   01. ROOT VARIABLES
+   ========================================================= */
 
 :root {
     --bg: #080b14;
-    --bg-2: #0c101b;
-    --bg-3: #101522;
-    --card: rgba(255, 255, 255, 0.025);
+    --bg-soft: #0b0f1a;
+    --bg-card: #101522;
+    --bg-card-2: #0d111d;
 
     --white: #f5f7fb;
     --text: #d9deea;
     --muted: #8d96a8;
+    --muted-light: #aeb6c7;
 
     --primary: #6366f1;
     --primary-light: #818cf8;
     --primary-dark: #4338ca;
 
-    --border: rgba(255, 255, 255, 0.09);
-    --border-hover: rgba(129, 140, 248, 0.4);
-
     --success: #4ade80;
+
+    --border: rgba(255, 255, 255, 0.09);
+    --border-light: rgba(255, 255, 255, 0.14);
+    --border-primary: rgba(129, 140, 248, 0.35);
 
     --heading: "Space Grotesk", sans-serif;
     --body: "DM Sans", sans-serif;
@@ -40,9 +44,9 @@
 }
 
 
-/* =========================
-   RESET
-   ========================= */
+/* =========================================================
+   02. RESET
+   ========================================================= */
 
 * {
     margin: 0;
@@ -55,14 +59,18 @@ html {
 }
 
 body {
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
     background:
         radial-gradient(
-            circle at 80% 0%,
+            circle at 85% 0%,
             rgba(99, 102, 241, 0.09),
             transparent 30%
         ),
         radial-gradient(
-            circle at 10% 50%,
+            circle at 5% 50%,
             rgba(67, 56, 202, 0.035),
             transparent 30%
         ),
@@ -73,13 +81,11 @@ body {
     font-family: var(--body);
 
     line-height: 1.7;
-
-    overflow-x: hidden;
 }
 
-body::selection {
+::selection {
     background: var(--primary);
-    color: #fff;
+    color: #ffffff;
 }
 
 img {
@@ -94,7 +100,8 @@ a {
 
 button,
 input,
-textarea {
+textarea,
+select {
     font: inherit;
 }
 
@@ -108,9 +115,9 @@ ol {
 }
 
 
-/* =========================
-   GLOBAL
-   ========================= */
+/* =========================================================
+   03. GLOBAL
+   ========================================================= */
 
 .container {
     width: min(
@@ -132,8 +139,11 @@ h4,
 h5,
 h6 {
     font-family: var(--heading);
+
     color: var(--white);
+
     font-weight: 600;
+
     letter-spacing: -0.045em;
 }
 
@@ -141,15 +151,38 @@ p {
     color: var(--muted);
 }
 
-::selection {
-    background: var(--primary);
-    color: #fff;
+.section {
+    padding: 120px 0;
+}
+
+.dark-section {
+    background:
+        rgba(255, 255, 255, 0.012);
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--primary-light);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
 }
 
 
-/* =========================
-   NAVBAR
-   ========================= */
+/* =========================================================
+   04. NAVBAR
+   ========================================================= */
 
 .navbar {
     position: fixed;
@@ -175,7 +208,8 @@ p {
 .navbar.scrolled {
     padding: 14px 0;
 
-    background: rgba(8, 11, 20, 0.82);
+    background:
+        rgba(8, 11, 20, 0.84);
 
     border-color: var(--border);
 
@@ -184,8 +218,11 @@ p {
 
 .nav-wrapper {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 30px;
 }
 
@@ -194,19 +231,25 @@ p {
 
 .brand {
     display: flex;
+
     align-items: center;
+
     gap: 10px;
+
+    color: var(--white);
 
     font-family: var(--heading);
 
     font-size: 17px;
+
     font-weight: 600;
 
-    color: var(--white);
+    white-space: nowrap;
 }
 
 .brand-mark {
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -215,6 +258,8 @@ p {
 
     border-radius: 9px;
 
+    color: #ffffff;
+
     background:
         linear-gradient(
             135deg,
@@ -222,18 +267,19 @@ p {
             var(--primary-dark)
         );
 
-    color: #fff;
-
     box-shadow:
-        0 8px 30px rgba(99, 102, 241, 0.25);
+        0 8px 30px
+        rgba(99, 102, 241, 0.25);
 }
 
 
-/* MENU */
+/* NAV MENU */
 
 .nav-menu {
     display: flex;
+
     align-items: center;
+
     gap: 30px;
 
     margin-left: auto;
@@ -245,6 +291,7 @@ p {
     color: var(--muted);
 
     font-size: 12px;
+
     font-weight: 500;
 
     transition: color var(--transition);
@@ -277,17 +324,19 @@ p {
 }
 
 
-/* NAV BUTTON */
+/* NAV CTA */
 
 .nav-cta {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 9px 16px;
 
-    border: 1px solid rgba(129, 140, 248, 0.3);
+    border: 1px solid
+        rgba(129, 140, 248, 0.3);
 
     border-radius: 8px;
 
@@ -299,12 +348,15 @@ p {
 }
 
 .nav-cta:hover {
-    background: rgba(99, 102, 241, 0.1);
-    border-color: var(--primary-light);
+    background:
+        rgba(99, 102, 241, 0.1);
+
+    border-color:
+        var(--primary-light);
 }
 
 
-/* MOBILE BUTTON */
+/* MOBILE MENU BUTTON */
 
 .mobile-menu {
     display: none;
@@ -313,7 +365,9 @@ p {
     height: 40px;
 
     align-items: center;
+
     justify-content: center;
+
     flex-direction: column;
 
     gap: 5px;
@@ -334,17 +388,20 @@ p {
     height: 1px;
 
     background: var(--white);
+
+    transition: var(--transition);
 }
 
 
-/* =========================
-   HERO
-   ========================= */
+/* =========================================================
+   05. HERO — HOME
+   ========================================================= */
 
 .hero {
     min-height: 100vh;
 
     display: flex;
+
     align-items: center;
 
     padding: 150px 0 100px;
@@ -397,6 +454,7 @@ p {
     display: inline-flex;
 
     align-items: center;
+
     gap: 9px;
 
     padding: 7px 12px;
@@ -427,7 +485,8 @@ p {
     background: var(--success);
 
     box-shadow:
-        0 0 12px rgba(74, 222, 128, 0.7);
+        0 0 12px
+        rgba(74, 222, 128, 0.7);
 }
 
 .hero-kicker {
@@ -462,13 +521,14 @@ p {
 
     margin-top: 32px;
 
-    font-size: 15px;
-
     color: var(--muted);
+
+    font-size: 15px;
 }
 
 .hero-actions {
     display: flex;
+
     align-items: center;
 
     flex-wrap: wrap;
@@ -479,14 +539,15 @@ p {
 }
 
 
-/* =========================
-   BUTTONS
-   ========================= */
+/* =========================================================
+   06. BUTTONS
+   ========================================================= */
 
 .btn {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     min-height: 45px;
@@ -499,9 +560,9 @@ p {
 
     font-weight: 600;
 
-    transition: var(--transition);
-
     cursor: pointer;
+
+    transition: var(--transition);
 }
 
 .btn:hover {
@@ -509,7 +570,7 @@ p {
 }
 
 .btn-primary {
-    color: #fff;
+    color: #ffffff;
 
     background:
         linear-gradient(
@@ -519,20 +580,23 @@ p {
         );
 
     box-shadow:
-        0 12px 35px rgba(79, 70, 229, 0.2);
+        0 12px 35px
+        rgba(79, 70, 229, 0.2);
 }
 
 .btn-primary:hover {
     box-shadow:
-        0 16px 45px rgba(79, 70, 229, 0.35);
+        0 16px 45px
+        rgba(79, 70, 229, 0.35);
 }
 
 .btn-outline {
-    border: 1px solid var(--border-hover);
-
     color: var(--text);
 
     background: transparent;
+
+    border: 1px solid
+        var(--border-primary);
 }
 
 .btn-outline:hover {
@@ -541,13 +605,15 @@ p {
 }
 
 
-/* =========================
-   SOCIAL
-   ========================= */
+/* =========================================================
+   07. SOCIAL
+   ========================================================= */
 
 .hero-social {
     display: flex;
+
     align-items: center;
+
     flex-wrap: wrap;
 
     gap: 15px;
@@ -559,14 +625,18 @@ p {
     font-size: 11px;
 }
 
+.hero-social a {
+    transition: var(--transition);
+}
+
 .hero-social a:hover {
     color: var(--primary-light);
 }
 
 
-/* =========================
-   HERO VISUAL
-   ========================= */
+/* =========================================================
+   08. HERO VISUAL
+   ========================================================= */
 
 .hero-visual {
     position: relative;
@@ -574,7 +644,9 @@ p {
     min-height: 550px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
@@ -584,7 +656,8 @@ p {
     width: 430px;
     height: 430px;
 
-    border: 1px solid rgba(129, 140, 248, 0.12);
+    border: 1px solid
+        rgba(129, 140, 248, 0.12);
 
     border-radius: 50%;
 }
@@ -596,7 +669,8 @@ p {
 
     inset: 38px;
 
-    border: 1px solid rgba(129, 140, 248, 0.08);
+    border: 1px solid
+        rgba(129, 140, 248, 0.08);
 
     border-radius: 50%;
 }
@@ -612,18 +686,21 @@ p {
 
     border-radius: 24px;
 
-    background: var(--bg-3);
+    background: var(--bg-card);
 
     transform: rotate(3deg);
 
     box-shadow:
-        0 40px 100px rgba(0, 0, 0, 0.45);
+        0 40px 100px
+        rgba(0, 0, 0, 0.45);
 
     transition: transform 0.5s ease;
 }
 
 .profile-card:hover {
-    transform: rotate(0deg) translateY(-8px);
+    transform:
+        rotate(0deg)
+        translateY(-8px);
 }
 
 .profile-card img {
@@ -638,6 +715,7 @@ p {
     position: absolute;
 
     display: flex;
+
     flex-direction: column;
 
     padding: 13px 15px;
@@ -652,7 +730,8 @@ p {
     backdrop-filter: blur(15px);
 
     box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.3);
+        0 20px 50px
+        rgba(0, 0, 0, 0.3);
 }
 
 .floating-card span {
@@ -671,130 +750,323 @@ p {
 
 .card-top {
     top: 95px;
+
     right: 0;
 }
 
 .card-bottom {
     bottom: 90px;
+
     left: 0;
 }
 
 
-/* =========================
-   SECTIONS
-   ========================= */
+/* =========================================================
+   09. HOME — JOURNEY PREVIEW
+   ========================================================= */
 
-.section {
-    padding: 120px 0;
+.home-journey {
+    overflow: hidden;
 }
 
-.dark-section {
-    background: rgba(255, 255, 255, 0.012);
+.home-journey-header {
+    display: flex;
 
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 65px;
 }
 
-.section-label {
-    display: inline-block;
+.home-journey-header h2 {
+    margin: 0;
 
-    margin-bottom: 20px;
+    color: var(--white);
 
-    color: var(--primary-light);
+    font-family: var(--heading);
 
-    font-size: 10px;
-
-    font-weight: 600;
-
-    letter-spacing: 0.18em;
-
-    text-transform: uppercase;
-}
-
-.section-heading {
-    max-width: 800px;
-
-    margin-bottom: 60px;
-}
-
-.section-heading h2 {
     font-size:
-        clamp(2.8rem, 5vw, 4.8rem);
+        clamp(3rem, 6vw, 5rem);
 
-    line-height: 0.98;
+    line-height: 0.95;
+
+    letter-spacing: -0.065em;
 }
 
-.section-heading h2 span {
+.home-journey-header h2 span {
     color: var(--primary-light);
 }
 
-.section-heading p {
-    max-width: 600px;
 
-    margin-top: 20px;
+/* VIEW JOURNEY LINK */
 
-    font-size: 14px;
-}
+.journey-link {
+    display: inline-flex;
 
+    align-items: center;
 
-/* =========================
-   INTRO CARDS
-   ========================= */
+    gap: 8px;
 
-.intro-grid {
-    display: grid;
+    padding-bottom: 5px;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    border-bottom: 1px solid
+        rgba(129, 140, 248, 0.3);
 
-    gap: 16px;
-}
+    color: var(--text);
 
-.intro-box {
-    min-height: 250px;
+    font-size: 11px;
 
-    padding: 30px;
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius-lg);
-
-    background: var(--card);
+    white-space: nowrap;
 
     transition: var(--transition);
 }
 
-.intro-box:hover {
-    transform: translateY(-6px);
-
-    border-color: var(--border-hover);
-
-    background:
-        rgba(99, 102, 241, 0.035);
-}
-
-.intro-box > span {
+.journey-link span {
     color: var(--primary-light);
 
-    font-size: 10px;
+    font-size: 15px;
+
+    transition: transform var(--transition);
 }
 
-.intro-box h3 {
-    margin-top: 65px;
+.journey-link:hover {
+    color: var(--primary-light);
 
-    margin-bottom: 10px;
-
-    font-size: 22px;
+    border-color: var(--primary-light);
 }
 
-.intro-box p {
+.journey-link:hover span {
+    transform:
+        translate(3px, -3px);
+}
+
+
+/* TIMELINE */
+
+.home-journey-timeline {
+    position: relative;
+
+    max-width: 950px;
+}
+
+
+/* LINE */
+
+.home-journey-timeline::before {
+    content: "";
+
+    position: absolute;
+
+    top: 25px;
+    bottom: 25px;
+
+    left: 27px;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(129, 140, 248, 0.35) 10%,
+            rgba(129, 140, 248, 0.35) 90%,
+            transparent
+        );
+}
+
+
+/* ITEM */
+
+.home-journey-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        55px 1fr;
+
+    gap: 30px;
+
+    padding-bottom: 35px;
+}
+
+.home-journey-item:last-child {
+    padding-bottom: 0;
+}
+
+
+/* ICON */
+
+.home-journey-marker {
+    position: relative;
+
+    z-index: 2;
+}
+
+.home-journey-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid
+        rgba(129, 140, 248, 0.28);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111629,
+            #0b0f1a
+        );
+
+    color: var(--primary-light);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.25);
+
+    transition: var(--transition);
+}
+
+.home-journey-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+.home-journey-item:hover
+.home-journey-icon {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(129, 140, 248, 0.7);
+
+    box-shadow:
+        0 0 30px
+        rgba(99, 102, 241, 0.18);
+}
+
+
+/* CONTENT */
+
+.home-journey-content {
+    padding: 4px 0 20px;
+
+    border-bottom: 1px solid var(--border);
+
+    transition: var(--transition);
+}
+
+.home-journey-item:last-child
+.home-journey-content {
+    border-bottom: 0;
+}
+
+.home-journey-stage {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--primary-light);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.18em;
+}
+
+.home-journey-content h3 {
+    margin: 0 0 6px;
+
+    color: var(--white);
+
+    font-family: var(--heading);
+
+    font-size: 25px;
+
+    letter-spacing: -0.035em;
+}
+
+.home-journey-content p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: var(--muted);
+
     font-size: 13px;
 }
 
 
-/* =========================
-   PAGE HEADER
-   ========================= */
+/* CURRENT */
+
+.home-journey-current {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.home-current-badge {
+    padding: 3px 7px;
+
+    border: 1px solid
+        rgba(74, 222, 128, 0.25);
+
+    border-radius: 5px;
+
+    color: #86efac;
+
+    background:
+        rgba(74, 222, 128, 0.04);
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+}
+
+.home-journey-item.current
+.home-journey-icon {
+    border-color:
+        rgba(129, 140, 248, 0.7);
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    box-shadow:
+        0 0 35px
+        rgba(99, 102, 241, 0.25);
+}
+
+.home-journey-item:hover
+.home-journey-content {
+    transform:
+        translateX(5px);
+}
+
+
+/* =========================================================
+   10. PAGE HEADER
+   ========================================================= */
 
 .page-header {
     padding: 180px 0 90px;
@@ -828,9 +1100,9 @@ p {
 }
 
 
-/* =========================
-   ABOUT
-   ========================= */
+/* =========================================================
+   11. ABOUT
+   ========================================================= */
 
 .about-main {
     display: grid;
@@ -850,7 +1122,7 @@ p {
 
     border-radius: var(--radius-xl);
 
-    background: var(--bg-3);
+    background: var(--bg-card);
 }
 
 .about-photo img {
@@ -860,7 +1132,8 @@ p {
 
     object-fit: cover;
 
-    transition: transform 0.6s ease;
+    transition:
+        transform 0.6s ease;
 }
 
 .about-photo:hover img {
@@ -889,9 +1162,9 @@ p {
 }
 
 
-/* =========================
-   VALUES
-   ========================= */
+/* =========================================================
+   12. VALUES
+   ========================================================= */
 
 .values-grid {
     display: grid;
@@ -911,13 +1184,17 @@ p {
 
     border-radius: var(--radius-lg);
 
+    background: var(--card, rgba(255,255,255,0.025));
+
     transition: var(--transition);
 }
 
 .value-card:hover {
-    transform: translateY(-6px);
+    transform:
+        translateY(-6px);
 
-    border-color: var(--border-hover);
+    border-color:
+        var(--border-primary);
 }
 
 .value-card > span {
@@ -939,9 +1216,9 @@ p {
 }
 
 
-/* =========================
-   JOURNEY
-   ========================= */
+/* =========================================================
+   13. JOURNEY FULL PAGE
+   ========================================================= */
 
 .journey-intro {
     max-width: 750px;
@@ -966,16 +1243,17 @@ p {
     font-size: 14px;
 }
 
-
-/* TIMELINE */
-
 .journey-timeline {
+    position: relative;
+
     max-width: 1050px;
 
     margin: 0 auto;
 }
 
 .journey-item {
+    position: relative;
+
     display: grid;
 
     grid-template-columns:
@@ -983,17 +1261,12 @@ p {
 
     gap: 30px;
 
-    position: relative;
-
     padding-bottom: 80px;
 }
 
 .journey-item:last-child {
     padding-bottom: 0;
 }
-
-
-/* YEAR */
 
 .journey-year {
     padding-top: 2px;
@@ -1006,9 +1279,6 @@ p {
 
     font-weight: 600;
 }
-
-
-/* LINE */
 
 .journey-line {
     position: relative;
@@ -1046,12 +1316,13 @@ p {
 
     width: 1px;
 
-    height: calc(100% + 80px);
+    height:
+        calc(100% + 80px);
 
     background:
         linear-gradient(
             to bottom,
-            rgba(129, 140, 248, 0.4),
+            rgba(129,140,248,.4),
             var(--border)
         );
 }
@@ -1066,11 +1337,9 @@ p {
     background: var(--primary);
 
     box-shadow:
-        0 0 20px rgba(99, 102, 241, 0.7);
+        0 0 20px
+        rgba(99,102,241,.7);
 }
-
-
-/* CONTENT */
 
 .journey-period {
     display: block;
@@ -1099,7 +1368,9 @@ p {
 }
 
 
-/* TAGS */
+/* =========================================================
+   14. JOURNEY TAGS
+   ========================================================= */
 
 .journey-tags,
 .tags,
@@ -1132,13 +1403,17 @@ p {
 .journey-tags span:hover,
 .tags span:hover,
 .skill-tags span:hover {
-    background: rgba(99, 102, 241, 0.07);
+    background:
+        rgba(99, 102, 241, 0.07);
 
-    border-color: var(--border-hover);
+    border-color:
+        var(--border-primary);
 }
 
 
-/* FUTURE */
+/* =========================================================
+   15. FUTURE
+   ========================================================= */
 
 .future-block {
     max-width: 850px;
@@ -1182,9 +1457,9 @@ p {
 }
 
 
-/* =========================
-   EXPERIENCE
-   ========================= */
+/* =========================================================
+   16. EXPERIENCE
+   ========================================================= */
 
 .empty-state {
     max-width: 900px;
@@ -1230,9 +1505,6 @@ p {
     font-size: 14px;
 }
 
-
-/* EXPERIENCE TYPES */
-
 .experience-types {
     display: grid;
 
@@ -1252,6 +1524,18 @@ p {
     border: 1px solid var(--border);
 
     border-radius: var(--radius-lg);
+
+    background:
+        rgba(255,255,255,0.015);
+
+    transition: var(--transition);
+}
+
+.experience-types > div:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        var(--border-primary);
 }
 
 .experience-types span {
@@ -1273,9 +1557,9 @@ p {
 }
 
 
-/* =========================
-   PROJECTS
-   ========================= */
+/* =========================================================
+   17. PROJECTS
+   ========================================================= */
 
 .projects-grid {
     display: grid;
@@ -1293,15 +1577,18 @@ p {
 
     border-radius: var(--radius-xl);
 
-    background: var(--card);
+    background:
+        rgba(255,255,255,0.025);
 
     transition: var(--transition);
 }
 
 .project-card:hover {
-    transform: translateY(-7px);
+    transform:
+        translateY(-7px);
 
-    border-color: var(--border-hover);
+    border-color:
+        var(--border-primary);
 }
 
 .project-visual {
@@ -1312,6 +1599,7 @@ p {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     overflow: hidden;
@@ -1416,9 +1704,9 @@ p {
 }
 
 
-/* =========================
-   SKILLS
-   ========================= */
+/* =========================================================
+   18. SKILLS
+   ========================================================= */
 
 .skills-page-grid {
     display: grid;
@@ -1442,15 +1730,18 @@ p {
 
     border-radius: var(--radius-xl);
 
-    background: var(--card);
+    background:
+        rgba(255,255,255,0.025);
 
     transition: var(--transition);
 }
 
 .skill-large-card:hover {
-    transform: translateY(-6px);
+    transform:
+        translateY(-6px);
 
-    border-color: var(--border-hover);
+    border-color:
+        var(--border-primary);
 }
 
 .skill-large-card > span {
@@ -1478,7 +1769,9 @@ p {
 }
 
 
-/* LEARNING */
+/* =========================================================
+   19. LEARNING
+   ========================================================= */
 
 .learning-section {
     display: grid;
@@ -1523,9 +1816,9 @@ p {
 }
 
 
-/* =========================
-   CONTACT
-   ========================= */
+/* =========================================================
+   20. CONTACT
+   ========================================================= */
 
 .contact-layout {
     display: grid;
@@ -1565,6 +1858,7 @@ p {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     padding: 24px 0;
@@ -1593,9 +1887,9 @@ p {
 }
 
 
-/* =========================
-   CTA
-   ========================= */
+/* =========================================================
+   21. BIG CTA
+   ========================================================= */
 
 .big-cta {
     max-width: 850px;
@@ -1627,9 +1921,9 @@ p {
 }
 
 
-/* =========================
-   FOOTER
-   ========================= */
+/* =========================================================
+   22. FOOTER
+   ========================================================= */
 
 footer {
     padding: 40px 0;
@@ -1662,14 +1956,15 @@ footer {
 }
 
 
-/* =========================
-   REVEAL ANIMATION
-   ========================= */
+/* =========================================================
+   23. REVEAL ANIMATION
+   ========================================================= */
 
 .reveal {
     opacity: 0;
 
-    transform: translateY(25px);
+    transform:
+        translateY(25px);
 
     transition:
         opacity 0.7s ease,
@@ -1679,13 +1974,27 @@ footer {
 .reveal.visible {
     opacity: 1;
 
-    transform: translateY(0);
+    transform:
+        translateY(0);
 }
 
 
-/* =========================
-   SCROLLBAR
-   ========================= */
+/* =========================================================
+   24. REMOVE SCROLL INDICATOR
+   ========================================================= */
+
+.scroll-indicator,
+.scroll-more,
+.scroll-for-more,
+.scroll-info,
+.scroll-text {
+    display: none !important;
+}
+
+
+/* =========================================================
+   25. SCROLLBAR
+   ========================================================= */
 
 ::-webkit-scrollbar {
     width: 7px;
@@ -1706,9 +2015,9 @@ footer {
 }
 
 
-/* =========================
-   TABLET
-   ========================= */
+/* =========================================================
+   26. TABLET
+   ========================================================= */
 
 @media (max-width: 1000px) {
 
@@ -1758,9 +2067,9 @@ footer {
 }
 
 
-/* =========================
-   MOBILE
-   ========================= */
+/* =========================================================
+   27. MOBILE
+   ========================================================= */
 
 @media (max-width: 760px) {
 
@@ -1769,23 +2078,57 @@ footer {
             calc(100% - 30px);
     }
 
-    /* NAV */
+
+    /* -----------------------------------------------------
+       NAVBAR
+       ----------------------------------------------------- */
+
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .navbar.scrolled {
+        padding: 12px 0;
+    }
+
+    .nav-wrapper {
+        min-height: 40px;
+    }
+
+    .brand {
+        font-size: 14px;
+    }
+
+    .brand-mark {
+        width: 31px;
+        height: 31px;
+
+        font-size: 13px;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    .nav-cta {
+        display: none;
+    }
 
     .nav-menu {
+        position: fixed;
+
+        top: 70px;
+
+        left: 12px;
+        right: 12px;
+
         display: none;
-
-        position: absolute;
-
-        top: calc(100% + 10px);
-
-        left: 15px;
-        right: 15px;
 
         flex-direction: column;
 
         gap: 0;
 
-        padding: 10px;
+        padding: 8px;
 
         margin: 0;
 
@@ -1794,9 +2137,15 @@ footer {
 
         border: 1px solid var(--border);
 
-        border-radius: 15px;
+        border-radius: 14px;
+
+        box-shadow:
+            0 20px 60px
+            rgba(0, 0, 0, 0.45);
 
         backdrop-filter: blur(20px);
+
+        z-index: 9998;
     }
 
     .nav-menu.open {
@@ -1804,25 +2153,36 @@ footer {
     }
 
     .nav-menu a {
-        padding: 12px;
+        width: 100%;
+
+        padding: 12px 14px;
+
+        border-radius: 8px;
+
+        font-size: 12px;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        background:
+            rgba(99, 102, 241, 0.08);
     }
 
     .nav-menu a::after {
         display: none;
     }
 
-    .nav-cta {
-        display: none;
-    }
 
-    .mobile-menu {
-        display: flex;
-    }
-
-    /* HERO */
+    /* -----------------------------------------------------
+       HERO
+       ----------------------------------------------------- */
 
     .hero {
+        min-height: auto;
+
         padding-top: 130px;
+
+        padding-bottom: 80px;
     }
 
     .hero h1 {
@@ -1857,14 +2217,18 @@ footer {
         height: 330px;
     }
 
-    /* SECTIONS */
+
+    /* -----------------------------------------------------
+       SECTION
+       ----------------------------------------------------- */
 
     .section {
         padding: 85px 0;
     }
 
     .page-header {
-        padding: 145px 0 75px;
+        padding:
+            145px 0 75px;
     }
 
     .page-header h1 {
@@ -1872,484 +2236,10 @@ footer {
             clamp(3.2rem, 15vw, 5rem);
     }
 
-    /* GRID */
 
-    .intro-grid,
-    .values-grid,
-    .experience-types,
-    .projects-grid,
-    .skills-page-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* ABOUT */
-
-    .about-main {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-    }
-
-    .about-photo {
-        max-width: 450px;
-    }
-
-    /* JOURNEY */
-
-    .journey-intro {
-        margin-bottom: 65px;
-    }
-
-    .journey-item {
-        grid-template-columns:
-            55px 22px 1fr;
-
-        gap: 12px;
-
-        padding-bottom: 65px;
-    }
-
-    .journey-line::after {
-        height:
-            calc(100% + 65px);
-    }
-
-    .journey-content h3 {
-        font-size: 21px;
-    }
-
-    .journey-content p {
-        font-size: 12px;
-    }
-
-    /* EMPTY */
-
-    .empty-state {
-        padding: 40px 25px;
-    }
-
-    .empty-number {
-        font-size: 65px;
-    }
-
-    /* CONTACT */
-
-    .contact-layout {
-        grid-template-columns: 1fr;
-
-        gap: 60px;
-    }
-
-    /* FOOTER */
-
-    .footer-wrapper {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-}
-
-
-/* =========================
-   SMALL MOBILE
-   ========================= */
-
-@media (max-width: 430px) {
-
-    .container {
-        width:
-            calc(100% - 24px);
-    }
-
-    .hero h1 {
-        font-size: 3.5rem;
-    }
-
-    .hero-visual {
-        min-height: 370px;
-    }
-
-    .profile-card {
-        width: 235px;
-    }
-
-    .hero-circle {
-        width: 285px;
-        height: 285px;
-    }
-
-    .floating-card {
-        padding: 10px 12px;
-    }
-
-    .card-top {
-        top: 35px;
-    }
-
-    .card-bottom {
-        bottom: 30px;
-    }
-
-    .journey-item {
-        grid-template-columns:
-            45px 18px 1fr;
-
-        gap: 8px;
-    }
-
-    .journey-year {
-        font-size: 10px;
-    }
-
-    .journey-content h3 {
-        font-size: 18px;
-    }
-
-    .journey-content p {
-        font-size: 11px;
-    }
-
-    .project-visual {
-        height: 230px;
-    }
-
-    .project-visual strong {
-        font-size: 40px;
-    }
-
-    .contact-copy h2 {
-        font-size: 3.1rem;
-    }
-}
-
-
-/* =========================
-   REDUCED MOTION
-   ========================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* =========================================================
-   HOME — JOURNEY PREVIEW
-   ========================================================= */
-
-.home-journey {
-    overflow: hidden;
-}
-
-
-/* HEADER */
-
-.home-journey-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-
-    gap: 30px;
-
-    margin-bottom: 65px;
-}
-
-.home-journey-header h2 {
-    margin: 0;
-
-    font-family: var(--heading);
-
-    font-size:
-        clamp(3rem, 6vw, 5rem);
-
-    line-height: .95;
-
-    letter-spacing: -.065em;
-}
-
-.home-journey-header h2 span {
-    color: var(--primary-light);
-}
-
-
-/* LINK */
-
-.journey-link {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    padding-bottom: 5px;
-
-    border-bottom: 1px solid
-        rgba(129, 140, 248, .3);
-
-    color: var(--text);
-
-    font-size: 11px;
-
-    transition: .3s ease;
-}
-
-.journey-link span {
-    color: var(--primary-light);
-
-    font-size: 15px;
-
-    transition: transform .3s ease;
-}
-
-.journey-link:hover {
-    color: var(--primary-light);
-
-    border-color:
-        var(--primary-light);
-}
-
-.journey-link:hover span {
-    transform:
-        translate(3px, -3px);
-}
-
-
-/* TIMELINE */
-
-.home-journey-timeline {
-    position: relative;
-
-    max-width: 950px;
-}
-
-
-/* LINE */
-
-.home-journey-timeline::before {
-    content: "";
-
-    position: absolute;
-
-    top: 25px;
-    bottom: 25px;
-
-    left: 27px;
-
-    width: 1px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent,
-            rgba(129, 140, 248, .35) 10%,
-            rgba(129, 140, 248, .35) 90%,
-            transparent
-        );
-}
-
-
-/* ITEM */
-
-.home-journey-item {
-    position: relative;
-
-    display: grid;
-
-    grid-template-columns:
-        55px 1fr;
-
-    gap: 30px;
-
-    padding-bottom: 35px;
-}
-
-.home-journey-item:last-child {
-    padding-bottom: 0;
-}
-
-
-/* MARKER */
-
-.home-journey-marker {
-    position: relative;
-
-    z-index: 2;
-}
-
-.home-journey-icon {
-    width: 55px;
-    height: 55px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid
-        rgba(129, 140, 248, .28);
-
-    border-radius: 16px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #111629,
-            #0b0f1a
-        );
-
-    color: var(--primary-light);
-
-    box-shadow:
-        0 12px 30px
-        rgba(0, 0, 0, .25);
-
-    transition: .35s ease;
-}
-
-.home-journey-icon svg {
-    width: 21px;
-    height: 21px;
-}
-
-.home-journey-item:hover
-.home-journey-icon {
-    transform:
-        translateY(-3px);
-
-    border-color:
-        rgba(129, 140, 248, .7);
-
-    box-shadow:
-        0 0 30px
-        rgba(99, 102, 241, .18);
-}
-
-
-/* CONTENT */
-
-.home-journey-content {
-    padding: 4px 0 20px;
-
-    border-bottom: 1px solid var(--border);
-
-    transition: .3s ease;
-}
-
-.home-journey-item:last-child
-.home-journey-content {
-    border-bottom: 0;
-}
-
-
-.home-journey-stage {
-    display: block;
-
-    margin-bottom: 5px;
-
-    color: var(--primary-light);
-
-    font-size: 9px;
-
-    font-weight: 600;
-
-    letter-spacing: .18em;
-}
-
-.home-journey-content h3 {
-    margin: 0 0 6px;
-
-    color: var(--white);
-
-    font-family: var(--heading);
-
-    font-size: 25px;
-
-    letter-spacing: -.035em;
-}
-
-.home-journey-content p {
-    max-width: 650px;
-
-    margin: 0;
-
-    color: var(--muted);
-
-    font-size: 13px;
-}
-
-
-/* CURRENT */
-
-.home-journey-current {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-}
-
-.home-current-badge {
-    padding: 3px 7px;
-
-    border: 1px solid
-        rgba(74, 222, 128, .25);
-
-    border-radius: 5px;
-
-    color: #86efac;
-
-    background:
-        rgba(74, 222, 128, .04);
-
-    font-size: 7px;
-
-    font-weight: 600;
-
-    letter-spacing: .12em;
-}
-
-
-/* CURRENT ICON */
-
-.home-journey-item.current
-.home-journey-icon {
-    border-color:
-        rgba(129, 140, 248, .7);
-
-    color: white;
-
-    background:
-        linear-gradient(
-            145deg,
-            var(--primary),
-            var(--primary-dark)
-        );
-
-    box-shadow:
-        0 0 35px
-        rgba(99, 102, 241, .25);
-}
-
-
-/* HOVER */
-
-.home-journey-item:hover
-.home-journey-content {
-    transform: translateX(5px);
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 760px) {
+    /* -----------------------------------------------------
+       HOME JOURNEY
+       ----------------------------------------------------- */
 
     .home-journey-header {
         display: block;
@@ -2408,5 +2298,235 @@ footer {
     .home-journey-item:hover
     .home-journey-content {
         transform: none;
+    }
+
+
+    /* -----------------------------------------------------
+       GRIDS
+       ----------------------------------------------------- */
+
+    .intro-grid,
+    .values-grid,
+    .experience-types,
+    .projects-grid,
+    .skills-page-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* -----------------------------------------------------
+       ABOUT
+       ----------------------------------------------------- */
+
+    .about-main {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .about-photo {
+        max-width: 450px;
+    }
+
+
+    /* -----------------------------------------------------
+       JOURNEY FULL PAGE
+       ----------------------------------------------------- */
+
+    .journey-intro {
+        margin-bottom: 65px;
+    }
+
+    .journey-item {
+        grid-template-columns:
+            55px 22px 1fr;
+
+        gap: 12px;
+
+        padding-bottom: 65px;
+    }
+
+    .journey-line::after {
+        height:
+            calc(100% + 65px);
+    }
+
+    .journey-content h3 {
+        font-size: 21px;
+    }
+
+    .journey-content p {
+        font-size: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       EMPTY STATE
+       ----------------------------------------------------- */
+
+    .empty-state {
+        padding: 40px 25px;
+    }
+
+    .empty-number {
+        font-size: 65px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTACT
+       ----------------------------------------------------- */
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+       ----------------------------------------------------- */
+
+    .footer-wrapper {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   28. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .container {
+        width:
+            calc(100% - 24px);
+    }
+
+
+    /* HERO */
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-visual {
+        min-height: 370px;
+    }
+
+    .profile-card {
+        width: 235px;
+    }
+
+    .hero-circle {
+        width: 285px;
+        height: 285px;
+    }
+
+    .floating-card {
+        padding: 10px 12px;
+    }
+
+    .card-top {
+        top: 35px;
+    }
+
+    .card-bottom {
+        bottom: 30px;
+    }
+
+
+    /* HOME JOURNEY */
+
+    .home-journey-header h2 {
+        font-size: 3rem;
+    }
+
+    .home-journey-item {
+        grid-template-columns:
+            40px 1fr;
+
+        gap: 15px;
+    }
+
+    .home-journey-timeline::before {
+        left: 19px;
+    }
+
+    .home-journey-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .home-journey-content h3 {
+        font-size: 19px;
+    }
+
+    .home-journey-content p {
+        font-size: 10.5px;
+    }
+
+
+    /* FULL JOURNEY */
+
+    .journey-item {
+        grid-template-columns:
+            45px 18px 1fr;
+
+        gap: 8px;
+    }
+
+    .journey-year {
+        font-size: 10px;
+    }
+
+    .journey-content h3 {
+        font-size: 18px;
+    }
+
+    .journey-content p {
+        font-size: 11px;
+    }
+
+
+    /* PROJECT */
+
+    .project-visual {
+        height: 230px;
+    }
+
+    .project-visual strong {
+        font-size: 40px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-copy h2 {
+        font-size: 3.1rem;
+    }
+}
+
+
+/* =========================================================
+   29. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
     }
 }
