@@ -38,7 +38,6 @@ The portfolio focuses on a clean, modern, and responsive interface that can be a
 | **HTML5**        | Website structure                                  |
 | **CSS3**         | Styling, layout, animations, and responsive design |
 | **JavaScript**   | Interactive functionality                          |
-| **Vercel**       | Deployment                                         |
 | **Git & GitHub** | Version control                                    |
 
 ---
